@@ -35,7 +35,7 @@ notesController.editNote= async (req, res) => {
         descripcion: req.body.descripcion,
         importancia: req.body.importancia
     }
-    await Employee.findByIdAndUpdate(id, {$set: notes}, {new: true});
+    await Notes.findByIdAndUpdate(id, {$set: notes}, {new: true});
     res.json({
         status: 'Nota actualizada'
     });
@@ -47,5 +47,4 @@ notesController.deleteNotes = async (req, res) => {
         status: 'Nota Eliminada'
     });
 };
-
 module.exports = notesController;
