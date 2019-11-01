@@ -10,10 +10,10 @@ app.set('port', process.env.PORT || 3000);
 //Funciones para procesar datos-Middleware
 app.set(morgan('dev'));
 app.use(express.json());
-//app.use(cors({origin:'http://localhost:4200'}));
+app.use(cors({origin:'http://localhost:4200'}));
 
 //Rutas
-//app.use('api/notes',require('./routes/notes.routes'));
+app.use('/api/notes',require('./routes/notes.routes'));
 
 ////Escucha
 app.listen(app.get('port'),()=>{
